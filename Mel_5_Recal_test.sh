@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd ../DNA/Exome/processed/2_skewer/test/
 
 foo4 () {
 local i=$1
@@ -9,7 +10,7 @@ local i=$1
 }
 export -f foo4
 
-for i in ../*sorted_dedup_fixmate.bam
+for i in *sorted_dedup_fixmate.bam
 do
 sem -j 16 --id bqsr1 foo4 "$i"
 done
