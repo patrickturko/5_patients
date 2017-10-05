@@ -56,7 +56,4 @@ sem -j 16 --id bqsr4 foo7 "$i"
 done
 sem --wait --id bqsr4
 
-rg_dir5=`echo QC_reports_b37`
-mkdir -p "$rg_dir5"
-
 
