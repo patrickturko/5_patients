@@ -1,1 +1,0 @@
-qsub -V -cwd -pe smp 16 -m abe -M patrick.turko@gmail.com Mel_5_Recal_test_01.sh
