@@ -4,7 +4,7 @@ Failed after 20 minutes several times. "You have not provided enough memory to J
 
 Mel_5_Recal_test_01_Jess.sh
 One sample from Jess, again restricted to Chr 20. Reference and known sites from hg19. 
-
 It ran fine. 
 
-
+Mel_5_Recal_test_02_Jess.sh
+Second recalibration, also fine
