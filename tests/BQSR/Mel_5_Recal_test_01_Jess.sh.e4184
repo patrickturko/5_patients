@@ -1,0 +1,32 @@
+INFO  10:23:18,039 HelpFormatter - ----------------------------------------------------------------------------------- 
+INFO  10:23:18,043 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.7-0-gcfedb67, Compiled 2016/12/12 11:21:18 
+INFO  10:23:18,043 HelpFormatter - Copyright (c) 2010-2016 The Broad Institute 
+INFO  10:23:18,044 HelpFormatter - For support and documentation go to https://software.broadinstitute.org/gatk 
+INFO  10:23:18,044 HelpFormatter - [Tue Oct 10 10:23:18 CEST 2017] Executing on Linux 3.10.0-327.36.3.el7.x86_64 amd64 
+INFO  10:23:18,044 HelpFormatter - Java HotSpot(TM) 64-Bit Server VM 1.8.0_91-b14 
+INFO  10:23:18,050 HelpFormatter - Program Args: -T BaseRecalibrator -R /data/Phil/ref_phil/GATK_resource/hg19/ucsc.hg19.fasta -I 1205LU_comboR5_sorted_dedup_fixmate.bam -knownSites /data/Phil/ref_phil/GATK_resource/hg19/dbsnp_138.hg19.vcf.gz -knownSites /data/Phil/ref_phil/GATK_resource/hg19/Mills_and_1000G_gold_standard.indels.hg19.sites.vcf.gz -knownSites /data/Phil/ref_phil/GATK_resource/hg19/1000G_phase1.snps.high_confidence.hg19.sites.vcf.gz -L 20 -o 1205LU_comboR5_recal_data.table 
+INFO  10:23:18,056 HelpFormatter - Executing as wid@derm.uzh.ch on Linux 3.10.0-327.36.3.el7.x86_64 amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_91-b14. 
+INFO  10:23:18,056 HelpFormatter - Date/Time: 2017/10/10 10:23:18 
+INFO  10:23:18,057 HelpFormatter - ----------------------------------------------------------------------------------- 
+INFO  10:23:18,057 HelpFormatter - ----------------------------------------------------------------------------------- 
+INFO  10:23:18,145 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  10:23:18,311 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  10:23:18,320 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+WARNING: BAM index file /data2/patrick/Patients/DNA/Exome/processed/2_skewer/test/1205LU_comboR5_sorted_dedup_fixmate.bai is older than BAM /data2/patrick/Patients/DNA/Exome/processed/2_skewer/test/1205LU_comboR5_sorted_dedup_fixmate.bam
+INFO  10:23:18,360 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.04 
+##### ERROR ------------------------------------------------------------------------------------------
+##### ERROR A USER ERROR has occurred (version 3.7-0-gcfedb67): 
+##### ERROR
+##### ERROR This means that one or more arguments or inputs in your command are incorrect.
+##### ERROR The error message below tells you what is the problem.
+##### ERROR
+##### ERROR If the problem is an invalid argument, please check the online documentation guide
+##### ERROR (or rerun your command with --help) to view allowable command-line arguments for this tool.
+##### ERROR
+##### ERROR Visit our website and forum for extensive documentation and answers to 
+##### ERROR commonly asked questions https://software.broadinstitute.org/gatk
+##### ERROR
+##### ERROR Please do NOT post this error to the GATK forum unless you have really tried to fix it yourself.
+##### ERROR
+##### ERROR MESSAGE: Badly formed genome location: Contig '20' does not match any contig in the GATK sequence dictionary derived from the reference; are you sure you are using the correct reference fasta file?
+##### ERROR ------------------------------------------------------------------------------------------
