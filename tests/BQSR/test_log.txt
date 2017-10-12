@@ -14,3 +14,9 @@ Produced report, fine
 
 Mel_5_Recal_test_04_Jess.sh
 Print reads, looks fine. 
+
+Melarray_recal_etc_1 and 2
+Realigned and recalibrated an old set of WES files. Worked.
+
+Validate_sam.sh
+Uses picardtools validatesamfile to check all the bams. They're all fine. 
