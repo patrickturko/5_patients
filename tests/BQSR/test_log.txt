@@ -8,3 +8,9 @@ It ran fine.
 
 Mel_5_Recal_test_02_Jess.sh
 Second recalibration, also fine
+
+Mel_5_Recal_test_03_Jess.sh
+Produced report, fine
+
+Mel_5_Recal_test_04_Jess.sh
+Print reads, looks fine. 

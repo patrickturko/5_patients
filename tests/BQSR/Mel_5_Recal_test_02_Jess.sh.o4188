@@ -1,4 +1,0 @@
-There were 3 WARN messages, the first 3 are repeated below.
-WARN  11:28:29,335 IndexDictionaryUtils - Track knownSites doesn't have a sequence dictionary built in, skipping dictionary validation 
-WARN  11:28:29,336 IndexDictionaryUtils - Track knownSites2 doesn't have a sequence dictionary built in, skipping dictionary validation 
-WARN  11:28:29,336 IndexDictionaryUtils - Track knownSites3 doesn't have a sequence dictionary built in, skipping dictionary validation 
