@@ -20,3 +20,13 @@ Realigned and recalibrated an old set of WES files. Worked.
 
 Validate_sam.sh
 Uses picardtools validatesamfile to check all the bams. They're all fine. 
+
+Melarray_from_the_top
+Just trying the whole pipeline again on the smallest exome files. 
+From aligner to fixmate.
+With GATK 3.8 instead of 3.7
+It worked. 
+
+Recalibrate_3.8.sh
+Recal with the new GATK, using files from above. 
+It failed as usual. 
