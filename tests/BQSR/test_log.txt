@@ -30,3 +30,18 @@ It worked.
 Recalibrate_3.8.sh
 Recal with the new GATK, using files from above. 
 It failed as usual. 
+
+GATK_3.8_whole_interval.sh
+Same file as above, using whole interval list instead of chromosome 20
+
+GATK_3.8_mitochndria
+Same file as above, using just MT 
+It worked!
+
+GATK_3.8_small_interval
+Same file as above, using a small interval -L 20:1-1000000
+It worked!
+
+
+
+
