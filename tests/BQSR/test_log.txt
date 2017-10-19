@@ -42,6 +42,11 @@ GATK_3.8_small_interval
 Same file as above, using a small interval -L 20:1-1000000
 It worked!
 
+calc_coverage.sh
+On advice from GATK forums, checked the coverage. It might be too high. Used 2 different ways. 
+About 1000 intervals over 400x, about 400 intervals over 500x
+
+
 
 
 

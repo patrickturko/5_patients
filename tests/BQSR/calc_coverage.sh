@@ -9,8 +9,8 @@ foo6 () {
 local i=$1
 	NAME=`echo $i | sed 's/\([A-Za-z0-9_]*\)_sorted_dedup_fixmate.bam/\1/'`;
 	echo ${NAME}
-	samtools depth -b ../../../../intervals/S07604624_Regions.bed ${i} > ${i}.coverage
-	#awk '$1 == 1 {print $0}' deduped_MA605.coverage > chr1_MA605.coverage
+	#samtools depth -b ../../../../intervals/S07604624_Regions.bed ${i} > ${i}.coverage
+	java -Xmx16G -jar /data/Phil/software/GATK_3.7/GenomeAnalysisTK.jar -T DepthOfCoverage -R /data/Phil/ref_phil/GATK_resource/b37/human_g1k_v37.fasta -I ${i} -L ../../../../intervals/targets.interval_list -o _coverage_stats
 
 }
 export -f foo6
@@ -20,4 +20,5 @@ do
 sem -j 16 --id coverage foo6 "$i"
 done
 sem --wait --id coverage
+
 
