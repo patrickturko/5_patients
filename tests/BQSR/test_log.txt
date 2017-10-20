@@ -1,4 +1,9 @@
-qsub -V -cwd -pe smp 16 -m abe -M patrick.turko@gmail.com Mel_5_Recal_test_01.sh
+...background...
+Tried recalibrating the deduped bams, which all failed with a java memory warning. 
+Doubled the memory available to 32, 64, and 128G, all of which failed the same way. 
+Starting investigating:
+
+Mel_5_Recal_test_01.sh
 One sample, restriced to chromosome 20
 Failed after 20 minutes several times. "You have not provided enough memory to Java"
 
@@ -45,6 +50,9 @@ It worked!
 calc_coverage.sh
 On advice from GATK forums, checked the coverage. It might be too high. Used 2 different ways. 
 About 1000 intervals over 400x, about 400 intervals over 500x
+
+calc_coverage.sh
+Check coverage of the melarray file from above to see if this is the difference. 
 
 
 
