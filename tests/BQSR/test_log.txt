@@ -53,7 +53,14 @@ About 1000 intervals over 400x, about 400 intervals over 500x
 
 calc_coverage.sh
 Check coverage of the melarray file from above to see if this is the difference. 
+Probably not... there are 1000 loci above 500x coverage... however the input files are much smaller
 
+downsamp_400.sh
+Try the recalibration again, using parameter -dcov 400 to set max coverage. 
+Failed as ususal. 
+
+downsamp_20.sh
+As above, but -dcov 20. 
 
 
 
