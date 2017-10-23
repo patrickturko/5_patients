@@ -61,7 +61,11 @@ Failed as ususal.
 
 downsamp_20.sh
 As above, but -dcov 20. 
+Failed, but with no errors? Did not create recalibration report, but also did not create an error file.
 
+downsamp_5.sh
+As above, -dcov 5
+Failed as usual. 
 
 
 
