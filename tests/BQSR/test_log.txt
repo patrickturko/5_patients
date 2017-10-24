@@ -67,5 +67,11 @@ downsamp_5.sh
 As above, -dcov 5
 Failed as usual. 
 
+exclude_big.sh 
+Removed intervals with > 500 coverage anywhere
+$ awk '/>500/{print $1}' _coverage_stats.sample_interval_summary > big_intervals.list
+Passes these to baserecal using -XL (exclude intervals)
+
+
 
 
