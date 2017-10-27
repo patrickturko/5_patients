@@ -89,3 +89,7 @@ Same failure as always
 GATK4_exclude_big.sh
 Using the new GATK, with 64G, excluding both lists above. 
 It worked!!
+
+GATK4_non_exclusive
+As above, with NO excluded sites.
+It worked!
