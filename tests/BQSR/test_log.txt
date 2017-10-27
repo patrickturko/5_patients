@@ -78,5 +78,14 @@ Plots coverage by chromosome. Found many regions over 5000.
 I'm wondering if the "big" intervals above may have failed to capture small regions
 of very high coverage. The interval-level coverage stats are means. 
 
+find_over_coverage.R
+Finds individual loci with coverage > 500, makes a bed file. Then a one line bedtools command creates 
+intervals from these.
 
+exclude_big_2.sh
+BaseRecalibrator excluding big_intervals.list from above, and over_500.bed from R script
+Same failure as always
 
+GATK4_exclude_big.sh
+Using the new GATK, with 64G, excluding both lists above. 
+It worked!!
