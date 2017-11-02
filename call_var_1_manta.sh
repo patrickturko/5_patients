@@ -1,9 +1,9 @@
 #!/bin/bash
 
 
-cd ../DNA/Exome/processed/2_skewer/test/6
+cd ../DNA/Exome/processed/2_skewer/6_bqsr_b37/
 
-ls *blood*BQSR.bam | sed 's/.*\([Pp]atient_[[:digit:]]\).*/\1/' > patient_names.txt
+find *blood*BQSR.bam | sed 's/.*\([Pp]atient_[[:digit:]]\).*/\1/' > patient_names.txt
 
 rg_dir5=`echo 7_variants_b37`
 mkdir -p "$rg_dir5"
