@@ -3,7 +3,7 @@
 
 cd ../DNA/Exome/processed/2_skewer/test/6
 
-ls *blood*BQSR.bam | sed 's/.*\([Pp]atient_[[:digit:]]\).*/\1/' > patient_names.txt
+find *blood*BQSR.bam | sed 's/.*\([Pp]atient_[[:digit:]]\).*/\1/' > patient_names.txt
 
 foo8 () {
 	local tumor=$1;
