@@ -43,8 +43,8 @@ foo8 () {
 	NAME=`echo ${tumor} | sed 's/.*\([Pp]atient_[[:digit:]]\).*/\1/'`
 	echo ${NAME}-mutect2
 	mkdir ${NAME}/mutect2_GATK4
-	TUMORNAME=`echo ${tumor} | sed 's/.*\([Pp]atient_[[:digit:]]_tumor_DNA\).*/\1/'`
-	NORMALNAME=`echo ${normal} | sed 's/.*\([Pp]atient_[[:digit:]]_blood_DNA\).*/\1/'`
+	TUMORNAME=`samtools view -H ${tumor} | grep '^@RG' | sed "s/.*SM:\([^\t]*\).*/\1/g" | uniq`
+	NORMALNAME=`samtools view -H ${normal} | grep '^@RG' | sed "s/.*SM:\([^\t]*\).*/\1/g" | uniq`
 	
 	/data/Phil/software/GATK4B5/gatk-launch --javaOptions "-Xmx8G" Mutect2 -R /data/Phil/ref_phil/GATK_resource/b37/human_g1k_v37.fasta -I ${tumor} -tumor ${TUMORNAME} -I ${normal} -normal ${NORMALNAME} -L ../../intervals/targets.interval_list --interval_padding 100 --dbsnp /data/Phil/ref_phil/GATK_resource/b37/dbsnp_138.b37.vcf.gz --germline_resource /data/Phil/ref_phil/GATK_resource/b37/1000G_phase3_v4_20130502.sites.vcf.gz -O ${NAME}_mutect2.vcf.gz
 
