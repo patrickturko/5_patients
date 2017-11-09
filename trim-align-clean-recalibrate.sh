@@ -2,6 +2,8 @@
 rg_dir=`echo 2_skewer`
 mkdir -p "$rg_dir"
 
+cd /data2/patrick/Patients/DNA/Exome/processed/2_skewer/test/7
+
 foo () {
 local i=$1
 	OUTPUT_DIR=`echo ./2_skewer`
@@ -25,9 +27,9 @@ mv *trimmed* ./2_skewer
 
 cd ./2_skewer
 
+rg_dir=`echo 3_bwamem`
 mkdir -p "$rg_dir"
 
-cd /data2/patrick/Patients/DNA/Exome/processed/2_skewer/test/5
 foo () {
 local i=$1
 	OUTPUT_DIR=`echo ./3_bwamem`	
@@ -125,20 +127,3 @@ done
 sem --wait --id QC_hs
 	
 
-mv *sorted.bam 3_bwamem_b37
-mv *sorted.bai 3_bwamem_b37
-
-mv *metrics.txt 4_dedup_b37
-mv *sorted_dedup.bam 4_dedup_b37
-
-mv *sorted_dedup_fixmate.bam 5_fixmate_b37
-mv *sorted_dedup_fixmate.bai 5_fixmate_b37
-
-mv *.table 6_bqsr_b37
-mv *plots.pdf 6_bqsr_b37
-mv *sorted_dedup_fixmate_bqsr.bam 6_bqsr_b37
-mv *sorted_dedup_fixmate_bqsr.bai 6_bqsr_b37
-
-mv *pcr_metrics.txt ../QC_reports_b37
-mv *aln_metrics.txt ../QC_reports_b37
-mv *hs_metrics.txt ../QC_reports_b37
