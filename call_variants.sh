@@ -63,12 +63,12 @@ foo9 () {
 local tumor=$1
 local normal=$2
 	NAME=`echo ${tumor} | sed 's/.*\([Pp]atient_[[:digit:]]\).*/\1/'`
-	echo ${NAME}-pileups
+	echo ${NAME}
 	mkdir ${NAME}
 	mkdir ${NAME}/pileups
-	samtools mpileup -f /data/Phil/ref_phil/GATK_resource/b37/human_g1k_v37.fasta -l ../../intervals/S07604624_Covered.bed -v --output ${NAME}_pileup.vcf ${tumor} ${normal};
-
-	mv ${NAME}_pileup.vcf ${NAME}/pileups
+	samtools mpileup -f /data/Phil/ref_phil/GATK_resource/b37/human_g1k_v37.fasta -l ../../intervals/S07604624_Covered.bed -q 1 -B --output ${NAME}.pileup ${tumor} ${normal};
+	
+	mv ${NAME}.pileup ${NAME}/pileups
 
 	}
 
@@ -81,21 +81,21 @@ done
 sem --wait --id pileup
 
 
+
 foo10() {
 local i=$1
 	NAME=`echo ${i} | sed 's/.*\([Pp]atient_[[:digit:]]\).*/\1/'`
-	echo $NAME-varscan
-	java -Xmx16G -jar /data/Phil/software/VarScan.v2.4.2.jar somatic ${i} ${NAME} --output-vcf 1 --mpileup 1
-
-	# What file does Varscan emit? Make a directory and move it there. 
-	# This section hasn't been tested, do it individually with call_var_5_varscan.sh
+	mkdir ${NAME}/varscan
+	java -Xmx16G -jar /data/Phil/software/VarScan.v2.4.2.jar somatic ${i} --output-snp ${NAME}_snp_varscan.vcf --output-indel ${NAME}_indel_varscan.vcf --output-vcf 1 --mpileup 1
+	mv ${NAME}*varscan.vcf ${NAME}/varscan
+	
 }
 	
 export -f foo10
 
 for word in $(cat patient_names.txt)
 do
-sem -j 16 --id varscan foo10 $word/pileups/*pileup.vcf 
+sem -j 16 --id varscan foo10 $word/pileups/${word}.pileup 
 done
 sem --wait --id varscan
 
