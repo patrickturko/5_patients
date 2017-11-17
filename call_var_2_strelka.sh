@@ -2,7 +2,7 @@
 
 
 cd ../DNA/Exome/processed/6_bqsr_b37
-
+source activate patrick
 
 
 foo7 () {
@@ -12,7 +12,7 @@ local normal=$2
 	echo ${NAME}-strelka
 	mkdir ${NAME}/strelka
 	
-	python /data/Phil/software/strelka/configureStrelkaSomaticWorkflow.py --normalBam ${normal} --tumorBam ${tumor} --referenceFasta /data/Phil/ref_phil/GATK_resource/b37/human_g1k_v37.fasta --runDir ${NAME} --exome --callRegions ../../intervals/S07604624_Covered.bed.gz
+	python /home/wid/miniconda3/envs/patrick/bin/configureStrelkaSomaticWorkflow.py --normalBam ${normal} --tumorBam ${tumor} --referenceFasta /data/Phil/ref_phil/GATK_resource/b37/human_g1k_v37.fasta --runDir ${NAME} --exome --callRegions ../../intervals/S07604624_Covered.bed.gz
 
 	python ${NAME}/runWorkflow.py -m local -j 8
 

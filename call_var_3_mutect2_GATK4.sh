@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-cd ../DNA/Exome/processed/6_bqsr_b37/
+cd ../DNA/Exome/processed/6_bqsr_b37
 #find *blood*BQSR.bam | sed 's/.*\([Pp]atient_[[:digit:]]\).*/\1/' > patient_names.txt
 
 foo8 () {

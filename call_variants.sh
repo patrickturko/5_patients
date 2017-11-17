@@ -48,7 +48,7 @@ foo8 () {
 	
 	/data/Phil/software/GATK4B5/gatk-launch --javaOptions "-Xmx8G" Mutect2 -R /data/Phil/ref_phil/GATK_resource/b37/human_g1k_v37.fasta -I ${tumor} -tumor ${TUMORNAME} -I ${normal} -normal ${NORMALNAME} -L ../../intervals/targets.interval_list --interval_padding 100 --dbsnp /data/Phil/ref_phil/GATK_resource/b37/dbsnp_138.b37.vcf.gz --germline_resource /data/Phil/ref_phil/GATK_resource/b37/1000G_phase3_v4_20130502.sites.vcf.gz -O ${NAME}_mutect2.vcf.gz
 
-	mv ${NAME}_mutect2.vcf.gz ${NAME}/mutect2_GATK4
+	mv ${NAME}_mutect2* ${NAME}/mutect2_GATK4
 
 }
 export -f foo8
