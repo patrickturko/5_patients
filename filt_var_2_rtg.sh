@@ -12,12 +12,18 @@ find . -maxdepth 1 -mindepth 1 -type d > patient_names.txt
 
 foo15(){
 	local NAME=$1
+
+	bcftools view ${NAME}/all_callers/${NAME}_mutect2_tumor.vcf.gz | sed 's/[[:digit:]]\/.*:/1\/1:/g' | bgzip > ${NAME}/all_callers/${NAME}_mutect2_tumor_fixed.vcf.gz
+
+	tabix ${NAME}/all_callers/${NAME}_mutect2_tumor_fixed.vcf.gz
+
 	local strelka=${NAME}/all_callers/${NAME}_strelka_tumor.vcf.gz
 	local varscan=${NAME}/all_callers/${NAME}_varscan_tumor.vcf.gz
-	local mutect2=${NAME}/all_callers/${NAME}_mutect2_tumor.vcf.gz
+	local mutect2=${NAME}/all_callers/${NAME}_mutect2_tumor_fixed.vcf.gz
 	
 	rm -R ${NAME}/comparisons
 	mkdir ${NAME}/comparisons
+
 	
 
 	rtg vcfeval --squash-ploidy -b ${strelka} -c ${varscan} -t /data2/patrick/reference/b37.SDF -f DP \

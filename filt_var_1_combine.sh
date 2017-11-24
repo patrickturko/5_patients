@@ -15,9 +15,9 @@ foo12 () {
 
 	/data/Phil/software/GATK4B5/gatk-launch --javaOptions "-Xmx4G" SelectVariants \
 	-R /data/Phil/ref_phil/GATK_resource/b37/human_g1k_v37.fasta \
-	-V ${i}	-se 'tumor' --excludeFiltered -O ${NAME}/all_callers/${NAME}_mutect2_tumor.vcf
+	-V ${i} -se 'tumor' --excludeFiltered -O ${NAME}/all_callers/${NAME}_mutect2_tumor.vcf
 
-	bcftools view ${NAME}/all_callers/${NAME}_mutect2_tumor.vcf | vcf-sort | bgzip > ${NAME}/all_callers/${NAME}_mutect2_tumor.vcf
+	bcftools view ${NAME}/all_callers/${NAME}_mutect2_tumor.vcf | vcf-sort | bgzip > ${NAME}/all_callers/${NAME}_mutect2_tumor.vcf.gz
 	tabix ${NAME}/all_callers/${NAME}_mutect2_tumor.vcf.gz -f
 	
 }
